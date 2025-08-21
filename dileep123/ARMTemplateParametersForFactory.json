@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dileep123"
+		},
+		"dileep123_accountKey": {
+			"value": ""
+		},
+		"dileep123_properties_typeProperties_url": {
+			"value": "https://dileep123.dfs.core.windows.net/"
+		}
+	}
+}
