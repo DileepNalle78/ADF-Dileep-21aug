@@ -7,29 +7,28 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "df-dileep-22aug25"
 		},
-		"AmazonS31_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS31'"
-		},
 		"LS_ASA_Gen2_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ASA_Gen2'"
 		},
-		"LS_AWS_S3_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'LS_AWS_S3'"
-		},
 		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "AWS-Ass"
+			}
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "AKIATHJS2RKPDTX4CVH3"
+			"defaultValue": "https://kvdileep.vault.azure.net/"
 		},
 		"LS_ASA_Gen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://sadileep22aug.dfs.core.windows.net/"
-		},
-		"LS_AWS_S3_properties_typeProperties_accessKeyId": {
-			"type": "string",
-			"defaultValue": "AKIATHJS2RKPDTX4CVH3"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,23 +57,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AmazonS31_secretAccessKey": {
-						"value": "[parameters('AmazonS31_secretAccessKey')]"
-					},
 					"LS_ASA_Gen2_accountKey": {
 						"value": "[parameters('LS_ASA_Gen2_accountKey')]"
 					},
-					"LS_AWS_S3_secretAccessKey": {
-						"value": "[parameters('LS_AWS_S3_secretAccessKey')]"
-					},
-					"AmazonS31_properties_typeProperties_accessKeyId": {
-						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					},
 					"LS_ASA_Gen2_properties_typeProperties_url": {
 						"value": "[parameters('LS_ASA_Gen2_properties_typeProperties_url')]"
 					},
-					"LS_AWS_S3_properties_typeProperties_accessKeyId": {
-						"value": "[parameters('LS_AWS_S3_properties_typeProperties_accessKeyId')]"
+					"AmazonS31_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
 					}
 				}
 			},

@@ -5,23 +5,24 @@
 		"factoryName": {
 			"value": "df-dileep-22aug25"
 		},
-		"AmazonS31_secretAccessKey": {
-			"value": ""
-		},
 		"LS_ASA_Gen2_accountKey": {
 			"value": ""
 		},
-		"LS_AWS_S3_secretAccessKey": {
-			"value": ""
-		},
 		"AmazonS31_properties_typeProperties_accessKeyId": {
-			"value": "AKIATHJS2RKPDTX4CVH3"
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "AWS-Ass"
+			}
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kvdileep.vault.azure.net/"
 		},
 		"LS_ASA_Gen2_properties_typeProperties_url": {
 			"value": "https://sadileep22aug.dfs.core.windows.net/"
-		},
-		"LS_AWS_S3_properties_typeProperties_accessKeyId": {
-			"value": "AKIATHJS2RKPDTX4CVH3"
 		}
 	}
 }
